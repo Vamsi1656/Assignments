@@ -1,0 +1,36 @@
+<html>
+    <head>
+ <script>
+ function myfun(){
+   var a=document.getElementById("mobile number").value
+    if(a==""){
+        document.getElementById("messages").innerHTML="** Please fill a Mobile Number"
+        return false
+    }
+    if(isNaN(a)){
+        document.getElementById("messages").innerHTML="** Only Mobile Number"
+        return false
+    }
+    if(a.length<10){
+        document.getElementById("messages").innerHTML="** Mobile number must be 10 digit"
+        return false
+    }
+    if(a.length>10){
+        document.getElementById("messages").innerHTML="** Mobile number must be 10 digit"
+        return false
+    }
+    if((a.charAt(0)!=9) && (a.charAt(0)!=8) && (a.charAt(0)!=7) && (a.charAt(0)!=6)){
+        document.getElementById("messages").innerHTML="** Mobile number must be starts with 9,8,7,6"
+        return false
+    }
+ }
+ </script>
+    </head>
+    <body>
+        <form onsubmit="return myfun()">
+            <input type="text" id="mobile number" value="">
+            <span id="messages"></span><br><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
